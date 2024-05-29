@@ -12,7 +12,7 @@ require("dotenv").config();
 
 app.use(cors({
     // origin: "http://localhost:5173",
-    origin: "https://main--melodic-cassata-16fc27.netlify.app/",
+    origin: ["*", "https://melodic-cassata-16fc27.netlify.app"],
     methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE", "OPTIONS", "CONNECT", "TRACE"],
     allowedHeaders: ["Content-Type", "Authorization", "X-Content-Type-Options", "Accept", "X-Requested-With", "Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers", "Cookie"],
     credentials: true,
