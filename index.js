@@ -11,8 +11,8 @@ const app = express();
 require("dotenv").config();
 
 app.use(cors({
-    origin: "http://localhost:5173", 
-    methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE", "OPTIONS", "CONNECT", "TRACE"],
+    origin: "http://localhost:5173",
+    // methods: ["GET", "HEAD", "PUT", "PATCH", "POST", "DELETE", "OPTIONS", "CONNECT", "TRACE"],
     // allowedHeaders: ["Content-Type", "Authorization", "X-Content-Type-Options", "Accept", "X-Requested-With", "Origin", "Access-Control-Request-Method", "Access-Control-Request-Headers"],
     credentials: true,
     // maxAge: 7200
@@ -22,7 +22,7 @@ app.use(express.json());
 app.use(cookieParser());
 app.use(express.urlencoded({ extended: false }));
 
-app.use("/uploads", express.static(path.join(__dirname, "uploads"))); // Serve static files from 'uploads' directory
+app.use("/uploads", express.static(path.join(__dirname, "uploads")));
 
 // Routes Middleware
 app.use("/api/users", userRoute);
